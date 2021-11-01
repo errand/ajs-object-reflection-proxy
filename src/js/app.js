@@ -1,6 +1,7 @@
 function orderByProps(object, values) {
   if (typeof object === 'object' && !Array.isArray(object) && object !== null) {
     const sorted = Object.keys(object)
+      .filter(key => !values.includes(key))
       .map(key => ({ key: key, value: object[key] }))
       .sort((a, b) => {
         if (a.key.toUpperCase() > b.key.toUpperCase()) {
@@ -12,21 +13,14 @@ function orderByProps(object, values) {
         return 0;
       });
 
-    for (let key in object) {
-      console.log(key);
-    }
-
-    console.log(sorted);
-    /* const filtered = Object.keys(object)
+    const sortedValues = Object.keys(object)
       .filter(key => values.includes(key))
-      .reduce((obj, key) => {
-        return {
-          ...obj,
-          [key]: object[key]
-        };
-      }, {});
+      .map(key => ({ key: key, value: object[key] }));
 
-    console.log(filtered) */
+    sorted.unshift(...sortedValues);
+    console.log(sorted);
+
+    return;
   }
   throw new Error('First agrument should be an Object');
 }
