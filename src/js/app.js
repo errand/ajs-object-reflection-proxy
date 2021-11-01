@@ -3,7 +3,6 @@ function orderByProps(object, values) {
     const cleanArray = [];
     const propsArray = [];
     for(let key in object) {
-      console.log(key + ': ' + values.indexOf(key))
       if(values.indexOf(key) > -1){
         propsArray[values.indexOf(key)] = { key: key, value: object[key] };
       } else {
