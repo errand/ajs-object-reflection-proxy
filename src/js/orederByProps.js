@@ -1,3 +1,10 @@
+/** @module orderByProps */
+/**
+ * Transforms an Object into array of objects and sorts it
+ * @param {Object} object - Input object to transform and sort.
+ * @param {(string|Object[])} values - Array with keys, which will be used for sorting.
+ * @return  {Array.<Object>} The sorted array of objects.
+ */
 export default function orderByProps(object, values) {
   if (typeof object === 'object' && !Array.isArray(object) && object !== null) {
     if (!Array.isArray(values)) {
