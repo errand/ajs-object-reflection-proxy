@@ -1,5 +1,7 @@
 # Домашнее задание к лекции «Object, Reflection и Proxy»
 
+[![Build status](https://ci.appveyor.com/api/projects/status/126c262iij9g8d10?svg=true)](https://ci.appveyor.com/project/errand/ajs-object-reflection-proxy)
+
 **Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.
 
 **Важно**: код должен проходить ESLint без ошибок
